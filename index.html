@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/syle.css">
+</head>
+<body>
+    <div class="top">
+        <img src="./img/ceiling-logo2.png" alt="美团外卖" class="logo">
+        <div class="search">
+            <input type="text" name="search" id="shopname" placeholder="搜索商家、美食">
+            <input type="button" value="搜索" id="search_button">
+        </div>
+    </div>
+    <div class="shop">
+        <a id="myshop" onclick="change_page()">我的购物车</a>(<span id="shop_num">0</span>)
+    </div>
+    <div id="meal">
+        <div class="food">
+            <img src="./img/1cde.jpg" width="100%">
+            <div class="foodinformation">
+                <span>A米汉堡</span>
+                <span class="foodprice">16元/份</span>
+                <p>月销8148单</p>
+                <span>起送￥10</span> 
+                <span class="delivery">免配送费</span>
+                <span>45分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('A米汉堡',16)">
+            </div>
+        </div>
+        <div class="food">
+            <img src="./img/3a31d.jpg" width="100%">
+            <div class="foodinformation">
+                <span>杨记小厨</span>
+                <span class="foodprice">17.5元/份</span>
+                <p>月销4639单</p>
+                <span>起送￥10</span>
+                <span class="delivery">免配送费</span>
+                <span>38分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('杨记小厨',17.5)">
+            </div>
+        </div>
+        <div class="food">
+            <img src="./img/9ecd.jpg" width="100%">
+            <div class="foodinformation">
+                <span>杨铭宇黄焖鸡米饭</span>
+                <span class="foodprice">18元/份</span>
+                <p>月销2571单</p>
+                <span>起送￥10</span>
+                <span class="delivery">免配送费</span>
+                <span>25分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('杨铭宇黄焖鸡米饭',18)">
+            </div>
+        </div>
+        <div class="food">
+            <img src="./img/d64c553.jpg" width="100%">
+            <div class="foodinformation">
+                <span>烤肉拌饭</span>
+                <span class="foodprice">18元/份</span>
+                <p>月销2347单</p>
+                <span>起送￥0</span>
+                <span class="delivery">免配送费</span>
+                <span>29分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('烤肉拌饭',18)">
+            </div>
+        </div>
+        <hr>
+        <div class="food">
+            <img src="./img/3d875.jpg" width="100%">
+            <div class="foodinformation">
+                <span>有名堂(焗饭、小炒)</span>
+                <span class="foodprice">14元/份</span>
+                <p>月销2156单</p>
+                <span>起送￥0</span>
+                <span class="delivery">免配送费</span>
+                <span>43分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('有名堂(焗饭、小炒)',14)">
+            </div>
+        </div>
+        <div class="food">
+            <img src="./img/880259b.jpg" width="100%">
+            <div class="foodinformation">
+                <span>翔仔湾(美食特惠!)</span>
+                <span class="foodprice">20元/份</span>
+                <p>月销1803单</p>
+                <span>起送￥10</span>
+                <span class="delivery">免配送费</span>
+                <span>34分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('翔仔湾',20)">
+            </div>
+        </div>
+        <div class="food">
+            <img src="./img/1b718f.jpg" width="100%">
+            <div class="foodinformation">
+                <span>食尚便当</span>
+                <span class="foodprice">21元/份</span>
+                <p>月销3554单</p>
+                <span>起送￥12</span>
+                <span class="delivery">免配送费</span>
+                <span>45分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('食尚便当',21)">
+            </div>
+        </div>
+        <div class="food">
+            <img src="./img/4c981e4.jpg" width="100%">
+            <div class="foodinformation">
+                <span>格子那只水饺</span>
+                <span class="foodprice">13元/份</span>
+                <p>月销2682单</p>
+                <span>起送￥10</span>
+                <span class="delivery">免配送费</span>
+                <span>23分钟</span>
+                <input type="button" class="addshop" value="加入购物车" onclick="add_shop('格子那只水饺',13)">
+            </div>
+        </div>
+    </div>
+    <div id="pay">
+        <div>
+            <table id="pay_inf">
+                <thead>
+                    <tr>
+                        <th>全选<input type="checkbox" onclick="ck_all()" id="all"></th>
+                        <th>菜品</th>
+                        <th>价格(元/份)</th>
+                        <th>数量</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody id="pay_tb"></tbody>
+            </table>
+        </div>
+        <p id="shop_pro">购物车空了!</p>
+        <div id="mange_shop">
+            <div>
+                <button onclick="del_sec()">删除选中</button>
+            </div>
+            <div>
+                合计￥<span id="shop_amount">0</span> <button onclick="paymoney()">结算</button>
+            </div>
+        </div>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+</html>
